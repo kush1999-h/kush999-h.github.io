@@ -1,10 +1,41 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyAiGA4uwpKwrRIUngiT_SNevsAwb2vbbps",
+    authDomain: "sampogoportfoliom.firebaseapp.com",
+    databaseURL: "https://sampogoportfoliom-default-rtdb.firebaseio.com",
+    projectId: "sampogoportfoliom",
+    storageBucket: "sampogoportfoliom.appspot.com",
+    messagingSenderId: "333516747950",
+    appId: "1:333516747950:web:03e691b3f4c060a902e93f",
+    measurementId: "G-5SZEY7JPY9"
+};
+firebase.initializeApp(firebaseConfig);
 
+const db = firebase.database();
+
+
+
+function show() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var comment = document.getElementById("comment").value;
+
+
+
+
+    db.ref('comments').push({
+        name: name,
+        email: email,
+        comment: comment,
+    });
+
+    alert("DONE");
+}
 
 function post_comment() {
     nm = document.getElementById('name').value;
     cm = document.getElementById('comment').value;
     make_comment(nm, cm);
-    
+
     document.getElementById('name').value = '';
     document.getElementById('comment').value = '';
 }
@@ -40,10 +71,3 @@ function make_comment(name, comment) {
     document.getElementsByClassName("comments")[0].appendChild(div_1);
 
 }
-
-
-
-
-
-
-

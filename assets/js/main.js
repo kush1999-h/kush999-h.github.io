@@ -1,22 +1,6 @@
 console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55');
 
-function show() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("id").value;
-    var comment = document.getElementById("comment").value;
 
-    firebase.datebase().ref('user/' + name).set({
-        name: name,
-        email: email,
-        comment: comment
-    }, function(error) {
-        if (error) {
-            ///failed
-        } else {
-            alert("DONE");
-        }
-    });
-}
 /* ---------------------------------------------- /*
  * Preloader
  /* ---------------------------------------------- */
