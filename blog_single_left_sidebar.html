@@ -56,20 +56,11 @@
     <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet">
 </head>
 
-<script>
-    const firebaseConfig = {
-        apiKey: "AIzaSyAiGA4uwpKwrRIUngiT_SNevsAwb2vbbps",
-        authDomain: "sampogoportfoliom.firebaseapp.com",
-        databaseURL: "https://sampogoportfoliom-default-rtdb.firebaseio.com",
-        projectId: "sampogoportfoliom",
-        storageBucket: "sampogoportfoliom.appspot.com",
-        messagingSenderId: "333516747950",
-        appId: "1:333516747950:web:03e691b3f4c060a902e93f",
-        measurementId: "G-5SZEY7JPY9"
-    };
+<script type="module">
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-analytics.js"; const firebaseConfig = { apiKey: "AIzaSyAiGA4uwpKwrRIUngiT_SNevsAwb2vbbps",
+    authDomain: "sampogoportfoliom.firebaseapp.com", databaseURL: "https://sampogoportfoliom-default-rtdb.firebaseio.com", projectId: "sampogoportfoliom", storageBucket: "sampogoportfoliom.appspot.com", messagingSenderId: "333516747950", appId: "1:333516747950:web:03e691b3f4c060a902e93f",
+    measurementId: "G-5SZEY7JPY9" }; // Initialize Firebase const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app);
 </script>
 
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
