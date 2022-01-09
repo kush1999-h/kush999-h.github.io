@@ -444,39 +444,39 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
          Working Contact Form
          ================================================================*/
 
-        $("#contactForm").submit(function(e) {
+        // $("#contactForm").submit(function(e) {
 
-            e.preventDefault();
-            var $ = jQuery;
+        //     e.preventDefault();
+        //     var $ = jQuery;
 
-            var postData = $(this).serializeArray(),
-                formURL = $(this).attr("action"),
-                $cfResponse = $('#contactFormResponse'),
-                $cfsubmit = $("#cfsubmit"),
-                cfsubmitText = $cfsubmit.text();
+        //     var postData = $(this).serializeArray(),
+        //         formURL = $(this).attr("action"),
+        //         $cfResponse = $('#contactFormResponse'),
+        //         $cfsubmit = $("#cfsubmit"),
+        //         cfsubmitText = $cfsubmit.text();
 
-            $cfsubmit.text("Sending...");
+        //     $cfsubmit.text("Sending...");
 
 
-            $.ajax({
-                url: formURL,
-                type: "POST",
-                data: postData,
-                success: function(data) {
-                    $cfResponse.html(data);
-                    $cfsubmit.text(cfsubmitText);
-                    $('#contactForm input[name=name]').val('');
-                    $('#contactForm input[name=email]').val('');
-                    $('#contactForm textarea[name=message]').val('');
-                },
-                error: function(data) {
-                    alert("Error occurd! Please try again");
-                }
-            });
+        //     $.ajax({
+        //         url: formURL,
+        //         type: "POST",
+        //         data: postData,
+        //         success: function(data) {
+        //             $cfResponse.html(data);
+        //             $cfsubmit.text(cfsubmitText);
+        //             $('#contactForm input[name=name]').val('');
+        //             $('#contactForm input[name=email]').val('');
+        //             $('#contactForm textarea[name=message]').val('');
+        //         },
+        //         error: function(data) {
+        //             alert("Error occurd! Please try again");
+        //         }
+        //     });
 
-            return false;
+        //     return false;
 
-        });
+        // });
 
 
         /*===============================================================

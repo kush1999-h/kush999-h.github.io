@@ -22,26 +22,27 @@ function show() {
 
 
 
-    db.ref('comments').push({
-        name: name,
-        email: email,
-        comment: comment,
-    });
 
     alert("DONE");
 }
 
 function post_comment() {
+
+
     nm = document.getElementById('name').value;
     cm = document.getElementById('comment').value;
+    db.ref('comments').push({
+        name: nm,
+        comment: cm,
+    });
     make_comment(nm, cm);
-
     document.getElementById('name').value = '';
     document.getElementById('comment').value = '';
 }
 
 
 function make_comment(name, comment) {
+
     div_1 = document.createElement('div');
     div_1.className = 'comment clearfix';
 
@@ -70,4 +71,17 @@ function make_comment(name, comment) {
 
     document.getElementsByClassName("comments")[0].appendChild(div_1);
 
+}
+
+function fetchFromDb() {
+    db.ref('comments').once('value', function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+            var childData = childSnapshot.val();
+            var name = childData['name'];
+
+            var comment = childData['comment'];
+
+            make_comment(name, comment);
+        });
+    });
 }
